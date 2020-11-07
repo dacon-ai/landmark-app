@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <hr>
+    <div>
+      <img src="{{ result.image_path }}" class="img-rounded" width="400" height="200">
+    </div>
+    <hr>      
+    <div>
+    <table>
+        <tr>
+            <th>Predicted Class</th>
+            <th>Predicted Prob</th>
+        </tr>
+        <tr>
+            <td>{{ result.class_name[0] }}</td>
+            <td>{{ result.probs[0] }}</td>
+        </tr>
+        <tr>
+            <td>{{ result.class_name[1] }}</td>
+            <td>{{ result.probs[1] }}</td>
+        </tr>
+        <tr>
+            <td>{{ result.class_name[2] }}</td>
+            <td>{{ result.probs[2] }}</td>
+        </tr>
+        <tr>
+            <td>{{ result.class_name[3] }}</td>
+            <td>{{ result.probs[3] }}</td>
+        </tr>
+        <tr>
+            <td>{{ result.class_name[4] }}</td>
+            <td>{{ result.probs[4] }}</td>
+        </tr>
+    </table>
+    </div>
+    <a href="{{ url_for('index') }}" class="btn btn-default">Back</a>
+      
+  </div>
+
+{% endblock %}
